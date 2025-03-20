@@ -1,15 +1,74 @@
+'use client';
+
+import { Card } from '@/components/shared/Card';
+import { Button } from '@/components/shared/Button';
+import { View, Text, StyleSheet } from 'react-native';
+import { globalStyles } from '@/styles/global';
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold mb-8">Welcome to FableTongue</h1>
-      <p className="text-xl text-gray-600 mb-8">Learn languages through stories</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Story cards will go here */}
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">Sample Story</h2>
-          <p className="text-gray-600">Start your language learning journey with our engaging stories.</p>
-        </div>
-      </div>
-    </div>
-  )
-} 
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Welcome to FableTongue</Text>
+        <Text style={styles.subtitle}>Learn languages through stories</Text>
+      </View>
+
+      <View style={styles.grid}>
+        <Card
+          title="Start Learning"
+          description="Begin your language learning journey with our engaging stories."
+          onPress={() => console.log('Start Learning')}
+        >
+          <Button
+            title="Get Started"
+            onPress={() => console.log('Get Started')}
+          />
+        </Card>
+
+        <Card
+          title="Featured Stories"
+          description="Explore our collection of curated stories for language learners."
+          onPress={() => console.log('Featured Stories')}
+        />
+
+        <Card
+          title="Your Progress"
+          description="Track your learning journey and achievements."
+          onPress={() => console.log('Your Progress')}
+        />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    ...globalStyles.container,
+    flex: 1,
+    minHeight: 800,
+  },
+  header: {
+    alignItems: 'center',
+    marginBottom: globalStyles.spacing.xxl,
+  },
+  title: {
+    fontSize: 36,
+    fontWeight: '700',
+    color: globalStyles.text.primary,
+    marginBottom: globalStyles.spacing.md,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 20,
+    color: globalStyles.text.secondary,
+    textAlign: 'center',
+  },
+  grid: {
+    width: '100%',
+    maxWidth: 1200,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: globalStyles.spacing.lg,
+  },
+}); 
