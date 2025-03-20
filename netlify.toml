@@ -1,6 +1,6 @@
 [build]
   base = "web"
-  command = "yarn install && yarn build"
+  command = "npm install && npm run build"
   publish = ".next"
 
 [[plugins]]
@@ -14,6 +14,5 @@
 [build.environment]
   NODE_VERSION = "18.20.7"
   NPM_VERSION = "10.8.2"
-  YARN_VERSION = "1.22.19"
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_OPTIONS = "--max_old_space_size=4096" 
