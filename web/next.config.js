@@ -6,6 +6,12 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
+  experimental: {
+    esmExternals: true, // Enable ESM
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+  },
   // Handle Expo and React Native Web
   webpack: (config) => {
     config.resolve.alias = {
@@ -19,6 +25,10 @@ const nextConfig = {
       '.web.tsx',
       ...(config.resolve.extensions || []),
     ]
+    // Enable source maps in development
+    if (process.env.NODE_ENV === 'development') {
+      config.devtool = 'eval-source-map'
+    }
     return config
   },
 }
