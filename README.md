@@ -1,61 +1,92 @@
 # FableTongue
 
-A web-based language learning application built with React Native Web and Expo.
+FableTongue is an innovative language learning platform that helps you learn languages through engaging stories. By combining immersive storytelling with interactive learning features, FableTongue makes language acquisition both enjoyable and effective.
 
 ## Features
 
-- Text-to-speech functionality
-- Web notifications
-- Share capabilities
-- Responsive design
-- Cross-platform compatibility
+- 📚 **Story-Based Learning**: Learn through context-rich, engaging stories
+- 🌍 **Multiple Languages**: Support for various language pairs
+- 📱 **Cross-Platform**: Available on web and mobile devices
+- 🎯 **Progress Tracking**: Monitor your learning journey
+- 🔄 **Interactive Practice**: Engage with the language through interactive exercises
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v18.x or v20.x)
-- npm or yarn
+- Node.js 18 or later
+- npm 9 or later
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/fabletongue.git
+git clone https://github.com/russmaw/fabletongue.git
 cd fabletongue
 ```
 
-2. Install dependencies:
+2. Install dependencies for the web version:
 ```bash
+cd web
 npm install
 ```
 
 3. Start the development server:
 ```bash
-npm run web
+npm run dev
 ```
 
-### Building for Production
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## Development
+
+### Web Version
+
+The web version is built with:
+- Next.js 14
+- React Native Web
+- TypeScript
+- React Navigation
+
+To work on the web version:
 ```bash
-npm run build:web
+cd web
+npm run dev
 ```
 
-## Deployment
+### Mobile Version (Coming Soon)
 
-This project is configured for deployment on Netlify. The deployment process is automated through GitHub:
-
-1. Push your changes to the main branch
-2. Netlify will automatically build and deploy your site
+The mobile version will be built with:
+- React Native
+- Expo
+- Native navigation and gestures
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions:
+- Open an issue on GitHub
+- Contact the development team
+- Check our documentation
+
+## Roadmap
+
+- [ ] Authentication system
+- [ ] Story creation interface
+- [ ] Progress tracking
+- [ ] Mobile app release
+- [ ] Offline support
+- [ ] Additional language pairs
+
+## Acknowledgments
+
+- Thanks to all contributors
+- Special thanks to our early users and testers
+- Built with support from the language learning community 
