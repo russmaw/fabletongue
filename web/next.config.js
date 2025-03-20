@@ -11,6 +11,7 @@ const nextConfig = {
     serverActions: {
       bodySizeLimit: '2mb',
     },
+    serverComponentsExternalPackages: ['react-native-web'],
   },
   // Handle Expo and React Native Web
   webpack: (config) => {
@@ -33,4 +34,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig 
+export default nextConfig 
