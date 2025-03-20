@@ -42,6 +42,18 @@ module.exports = async function (env, argv) {
     },
   });
 
+  // Add externals for Expo packages
+  config.externals = {
+    ...config.externals,
+    'expo-av': 'expo-av',
+    'expo-device': 'expo-device',
+    'expo-file-system': 'expo-file-system',
+    'expo-sharing': 'expo-sharing',
+    'expo-speech': 'expo-speech',
+    'expo-notifications': 'expo-notifications',
+    'expo-updates': 'expo-updates',
+  };
+
   // Add support for environment variables
   config.plugins.push(
     new webpack.DefinePlugin({
