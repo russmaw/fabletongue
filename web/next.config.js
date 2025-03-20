@@ -5,14 +5,9 @@ const nextConfig = {
   output: 'export', // Static HTML export
   images: {
     unoptimized: true, // Required for static export
+    domains: ['localhost'],
   },
-  experimental: {
-    esmExternals: true, // Enable ESM
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
-    serverComponentsExternalPackages: ['react-native-web'],
-  },
+  trailingSlash: true,
   // Handle Expo and React Native Web
   webpack: (config) => {
     config.resolve.alias = {
@@ -31,6 +26,10 @@ const nextConfig = {
       config.devtool = 'eval-source-map'
     }
     return config
+  },
+  // Disable server components since we're doing static export
+  experimental: {
+    appDir: false,
   },
 }
 
