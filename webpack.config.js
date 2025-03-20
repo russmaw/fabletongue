@@ -31,15 +31,23 @@ module.exports = async function (env, argv) {
     zlib: false,
   };
 
+  // Prevent circular dependencies
+  config.resolve.symlinks = false;
+
+  // Add module resolution rules
+  config.module.rules.push({
+    test: /\.m?js$/,
+    resolve: {
+      fullySpecified: false,
+    },
+  });
+
   // Add support for environment variables
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
     })
   );
-
-  // Prevent circular dependencies
-  config.resolve.symlinks = false;
 
   return config;
 }; 
